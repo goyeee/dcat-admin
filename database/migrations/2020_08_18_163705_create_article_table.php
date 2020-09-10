@@ -15,7 +15,6 @@ class CreateArticleTable extends Migration
     {
         Schema::create('article', function (Blueprint $table) {
             $table->increments('articleid');
-            $table->unsignedInteger('articleid');
             $table->unsignedTinyInteger('languageid')->default('0');
             $table->string('title')->default('');
             $table->string('subtitle')->default('');
@@ -32,11 +31,11 @@ class CreateArticleTable extends Migration
             $table->unsignedInteger('favoritecount')->default('0');
             $table->unsignedInteger('likecount')->default('0');
             $table->unsignedTinyInteger('articlestatus')->default('0');
-            $table->dateTime('addtime')->default('0000-00-00 00:00:00');
+            $table->dateTime('addtime');
             $table->unsignedTinyInteger('istask')->default('0');
-            $table->dateTime('publishtime')->default('0000-00-00 00:00:00');
+            $table->dateTime('publishtime');
             $table->unsignedInteger('adminid')->default('0');
-            $table->timestamp('systemtime')->default('CURRENT_TIMESTAMP');
+            $table->timestamp('systemtime');
         });
     }
 

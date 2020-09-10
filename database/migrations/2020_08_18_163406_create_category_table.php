@@ -15,7 +15,6 @@ class CreateCategoryTable extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->increments('categoryid');
-            $table->unsignedInteger('categoryid');
             $table->unsignedTinyInteger('languageid')->default('0');
             $table->unsignedInteger('parentid')->default('0');
             $table->string('categoryname')->default('');
@@ -27,8 +26,8 @@ class CreateCategoryTable extends Migration
             $table->string('description')->default('');
             $table->unsignedInteger('sortid')->default('0');
             $table->unsignedInteger('viewcount')->default('0');
-            $table->dateTime('addtime')->default('0000-00-00 00:00:00');
-            $table->timestamp('systemtime')->default('CURRENT_TIMESTAMP');
+            $table->dateTime('addtime');
+            $table->timestamp('systemtime');
         });
     }
 

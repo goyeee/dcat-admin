@@ -40,10 +40,10 @@ class ArticleController extends AdminController
             $grid->publishtime;
             $grid->adminid;
             $grid->systemtime;
-        
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('articleid');
-        
+
             });
         });
     }
@@ -103,7 +103,7 @@ class ArticleController extends AdminController
             $form->text('isbold');
             $form->text('linkurl');
             $form->text('usertypeid');
-            $form->text('thumbimagepath');
+            $form->image('thumbimagepath');
             $form->text('tabletypeid');
             $form->text('viewcount');
             $form->text('favoritecount');
